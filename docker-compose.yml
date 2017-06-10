@@ -1,0 +1,23 @@
+services:
+ distcc:
+  build:
+   context: distcc
+  ports:
+   - "3632:3632"
+   - "8090:8090"
+  environment:
+   - DISTCC_SAVE_TEMPS=0
+  entrypoint:
+   - "distccd"
+   - "--allow"
+   - "192.168.2.0/24"
+   - "--no-detach"
+   - "--stats"
+   - "--stats-port"
+   - "8090"
+   - "--log-file=/tmp/distcc.log"
+   - "--log-level=debug"
+   
+
+version: "3"
+

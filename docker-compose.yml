@@ -10,7 +10,7 @@ services:
   entrypoint:
    - "distccd"
    - "--allow"
-   - "192.168.2.0/24"
+   - "192.168.0.0/22"
    - "--no-detach"
    - "--stats"
    - "--stats-port"

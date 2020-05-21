@@ -1,7 +1,7 @@
 FROM alpine AS builder
 RUN apk add --update wget
-RUN wget http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20181113T214502Z.tar.xz
-RUN mkdir /dd ; cd /dd; tar -Jxf /stage3-amd64-20181113T214502Z.tar.xz
+RUN wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200516T183750Z/stage3-amd64-20200516T183750Z.tar.xz
+RUN mkdir /dd ; cd /dd; tar -Jxf /stage3-amd64-*.tar.xz
 
 # Emerge
 FROM scratch AS build2
